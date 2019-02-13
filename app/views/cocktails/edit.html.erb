@@ -1,0 +1,32 @@
+<div class="wrapper">
+  <div class="container">
+    <h1>Edit Cocktail <%= @cocktail.name %> </h1>
+
+    <%= simple_form_for(@cocktail) do |f| %>
+      <div class="form-group">
+        <%= f.input :name, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.input :description, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.input :servings, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.input :instructions, class: 'form-control' %>
+      </div>
+
+      <ul class="list-inline">
+        <li class="list-inline-item">
+          <%= f.submit class: 'btn btn-primary' %>
+        </li>
+        <li class="list-inline-item">
+          <%= link_to "Back to All Cocktails", cocktails_path, class: "btn btn-primary"%>
+        </li>
+      </ul>
+    <% end %>
+  </div>
+</div>

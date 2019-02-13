@@ -1,0 +1,25 @@
+<div class="wrapper">
+  <div class="container">
+    <ul class= "list-inline">
+      <li class= "list-inline-item">
+        <h1>Add Review <%= @cocktail.name %></h1>
+      </li>
+      <li class= "list-inline-item">
+        <%= link_to "Back to Cocktail List", cocktails_path, class: "btn btn-primary"%>
+      </li>
+    </ul>
+
+    <%= form_for [@cocktail, @review] do |f| %>
+      <div class="form-group">
+        <%= f.label :content %>
+        <%= f.text_field :content, placeholder: "So... what did you think of this lovely libation?", class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :rating %>
+        <%= f.text_field :rating, placeholder: "On a scale of 1-5", class: 'form-control' %>
+      </div>
+      <%= f.submit "Add Review", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<div class="wrapper-home">
+  <div class="container">
+    <div class="intro">
+      <h1>An Ode to the Grapefruit</h1>
+      <p class="welcome">
+        Grapefruit has long been recognized as an amazing cocktail mixer. The bitter and tart flavors cut through strong alcohol, much like pickle juice. These pink and yellow gems add a touch of sweetness, but are never overwhelming, so this sweet citrus melody will pair well with nearly any bottle you have hiding under that cupboard. Oh, and grapefruits are full of antioxidants and vitamins, so you can feel a little less guilty about drinking so much!
+      </p>
+      <ul class="list-inline product-controls">
+        <li><a href=""><i class="fab fa-facebook-f"></i></a></s></li>
+        <li><a href=""><i class="fab fa-instagram"></i></a></s></li>
+        <li><a href=""><i class="fab fa-twitter"></i></a></s></li>
+      </ul>
+      <h2>Get Ready to Shake Shake Shake</h2>
+    </div>
+  </div>
+</div>
+
+<div class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="assets/grapefruit1.jpg" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="assets/smoke.jpg" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="assets/grapefruit2.jpg" alt="Third slide">
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h1>The Menu</h1>
+    <div class="row card-group">
+        <% @cocktails.each do |cocktail| %>
+        <div class="col-4">
+            <div class="card-body">
+              <h2 class="card-title"> <%= link_to cocktail.name, cocktail_path(cocktail), class: "link" %> </h2>
+              <p class="card-text"> <%= cocktail.description %> </p>
+              <!-- <p> Average rating: cocktail.reviews.average(:rating).round(2) %> </p> -->
+              <%= link_to "full recipe", cocktail_path(cocktail), class: "link-two"%>
+            </div>
+          </div>
+        <% end %>
+    </div>
+  <%= link_to "Add New Cocktail", new_cocktail_path, class: "btn btn-primary"%>
+</div>
+
+
+
+        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+

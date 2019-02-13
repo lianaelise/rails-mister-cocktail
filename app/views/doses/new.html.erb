@@ -1,0 +1,28 @@
+<div class="wrapper">
+  <div class="container">
+    <ul class= "list-inline">
+      <li class= "list-inline-item">
+        <h2>Add Cocktail</h2>
+      </li>
+      <li class= "list-inline-item">
+        <%= link_to "Back to Cocktail List", cocktails_path, class: "btn btn-primary"%>
+      </li>
+    </ul>
+
+    <%= simple_form_for [@cocktail, @dose] do |f| %>
+      <div class="form-group">
+        <%= f.input :amount, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.input :method, class: 'form-control' %>
+      </div>
+
+        <div class="form-group">
+        <%= f.association :ingredient, collection: Ingredient.all, class: 'form-control' %>
+      </div>
+
+      <%= f.submit class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

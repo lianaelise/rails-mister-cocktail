@@ -1,0 +1,45 @@
+<div class="wrapper">
+  <div class="container">
+    <h1><%= @cocktail.name %></h1>
+    <p>Serves: <%= @cocktail.servings %></p>
+    <p>Why you should try this cocktail: <%= @cocktail.description %></p>
+
+    <h2>Here's what you need to do to make it: </h2>
+      <% @cocktail.doses.each do |amt| %>
+        <ul>
+          <li> <%= amt.amount %> - <%= amt.method %> of <%= amt.ingredient.name %>
+            <%= link_to 'delete', dose_path(amt), method: :delete %>
+          </li>
+        </ul>
+      <% end %>
+
+    <h2> Now the Instructions: </h2>
+    <p> <%= @cocktail.instructions %> </p>
+
+    <h2>You Tell Us: How did it taste?</h2>
+
+    <table class="table">
+      <% @cocktail.reviews.each do |comment| %>
+        <tr>
+            <td> <%= comment.content %> </td>
+            <td> <%= comment.rating %></td>
+        </tr>
+      <% end %>
+    </table>
+
+    <ul class="list-inline">
+      <li class="list-inline-item">
+        <%= link_to "Review this Cocktail", new_cocktail_review_path(@cocktail), class: "btn btn-primary"%>
+      </li>
+      <li class="list-inline-item">
+        <%= link_to "Back to Cocktail List", cocktails_path, class: "btn btn-primary"%>
+      </li>
+     <li class="list-inline-item">
+        <%= link_to "Edit this Cocktail", edit_cocktail_path, class: "btn btn-primary"%>
+      </li>
+      <li class="list-inline-item">
+        <%= link_to "Add a Dose to the Cocktail", new_cocktail_dose_path(@cocktail), class: "btn btn-primary"%>
+    </ul>
+  </div>
+</div>
+
