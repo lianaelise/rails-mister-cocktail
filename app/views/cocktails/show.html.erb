@@ -2,13 +2,15 @@
   <div class="container">
     <h1><%= @cocktail.name %></h1>
     <p>Serves: <%= @cocktail.servings %></p>
+    <p>Contributor: <%= @cocktail.contributor %></p>
     <p>Why you should try this cocktail: <%= @cocktail.description %></p>
 
     <h2>Here's what you need to do to make it: </h2>
       <% @cocktail.doses.each do |amt| %>
         <ul>
-          <li> <%= amt.amount %> - <%= amt.method %> of <%= amt.ingredient.name %>
-            <%= link_to 'delete', dose_path(amt), method: :delete %>
+          <li>
+            <%= amt.amount %> - <%= amt.method %> of <%= amt.ingredient.name %>
+            <%= link_to '', dose_path(amt), method: :delete, class: "fas fa-trash-alt" %>
           </li>
         </ul>
       <% end %>
