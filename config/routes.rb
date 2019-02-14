@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   end
   resources :doses, only: [:edit, :update, :destroy]
   resources :reviews, only: [:edit, :update, :destroy]
+
+  root to:'cocktails#index'
 end
