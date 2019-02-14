@@ -1,36 +1,42 @@
 <div class="wrapper">
   <div class="container">
-    <h1>Edit Cocktail <%= @cocktail.name %> </h1>
+    <div class="vertical-pic">
+      <div class="flex-item vertical-form">
+        <h1>Edit Cocktail <%= @cocktail.name %> </h1>
 
-    <%= simple_form_for(@cocktail) do |f| %>
-      <div class="form-group">
-        <%= f.input :name, class: 'form-control' %>
+        <%= simple_form_for(@cocktail) do |f| %>
+          <div class="form-group">
+            <%= f.input :name, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.input :description, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.input :contributor, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.input :servings, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.input :instructions, class: 'form-control' %>
+          </div>
+
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <%= f.submit class: 'btn btn-primary' %>
+            </li>
+            <li class="list-inline-item">
+              <%= link_to "Back to All Cocktails", cocktails_path, class: "btn btn-primary"%>
+            </li>
+          </ul>
+        <% end %>
       </div>
-
-      <div class="form-group">
-        <%= f.input :description, class: 'form-control' %>
+        <img class="vertical"  <%= cl_image_tag("https://res.cloudinary.com/diu66bbfw/image/upload/v1550152748/grapefruitfrom2.jpg") %>>
       </div>
-
-      <div class="form-group">
-        <%= f.input :contributor, class: 'form-control' %>
-      </div>
-
-      <div class="form-group">
-        <%= f.input :servings, class: 'form-control' %>
-      </div>
-
-      <div class="form-group">
-        <%= f.input :instructions, class: 'form-control' %>
-      </div>
-
-      <ul class="list-inline">
-        <li class="list-inline-item">
-          <%= f.submit class: 'btn btn-primary' %>
-        </li>
-        <li class="list-inline-item">
-          <%= link_to "Back to All Cocktails", cocktails_path, class: "btn btn-primary"%>
-        </li>
-      </ul>
-    <% end %>
+    </div>
   </div>
 </div>
