@@ -39,7 +39,7 @@
             <div class="card-body">
               <h2 class="card-title"> <%= link_to cocktail.name, cocktail_path(cocktail), class: "link" %> </h2>
               <p class="card-text"> <%= cocktail.description %> </p>
-              <p> Average rating: <%= cocktail.reviews.average(:rating).round(2) %> </p>
+              <p> Average rating: <%= cocktail.reviews.average(:rating).round(2) if cocktail.reviews.average(:rating) %> </p>
               <%= link_to "full recipe", cocktail_path(cocktail), class: "link-two"%>
             </div>
           </div>
