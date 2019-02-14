@@ -6,6 +6,11 @@
 
         <%= simple_form_for(@cocktail) do |f| %>
           <div class="form-group">
+            <%= f.input :photo %>
+            <%= f.input :photo_cache, as: :hidden, class: 'form-control btn btn-primary' %>
+          </div>
+
+          <div class="form-group">
             <%= f.input :name, class: 'form-control' %>
           </div>
 
@@ -35,7 +40,7 @@
           </ul>
         <% end %>
       </div>
-        <img class="vertical"  <%= cl_image_tag("https://res.cloudinary.com/diu66bbfw/image/upload/v1550152748/grapefruitfrom2.jpg") %>>
+        <%= cl_image_tag "https://res.cloudinary.com/diu66bbfw/image/upload/v1550152748/grapefruitfrom2.jpg", class:"vertical" %>
       </div>
     </div>
   </div>

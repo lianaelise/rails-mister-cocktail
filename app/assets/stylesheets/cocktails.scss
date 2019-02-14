@@ -95,13 +95,15 @@ h2 {
 }
 
 .vertical {
-  width: 30%;
-  height: 30%;
-  margin-left: 15px;
-}
-
-.vertical-two {
   width: 35%;
   height: 35%;
   margin-left: 15px;
+}
+
+.cocktail-image {
+  width: 75%;
+  height: 75%;
+  margin-left: 15px;
+  border-radius: 5px;
+  opacity: .75;
 }

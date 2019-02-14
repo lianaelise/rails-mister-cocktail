@@ -1,22 +1,29 @@
 <div class="wrapper">
   <div class="container">
-    <h1><%= @cocktail.name %></h1>
-    <p>Serves: <%= @cocktail.servings %></p>
-    <p>Contributor: <%= @cocktail.contributor %></p>
-    <p>Why you should try this cocktail: <%= @cocktail.description %></p>
+    <div class="vertical-pic">
+      <div class="flex-item vertical-form">
+        <h1><%= @cocktail.name %></h1>
+        <p>Serves: <%= @cocktail.servings %></p>
+        <p>Contributor: <%= @cocktail.contributor %></p>
+        <p>Why you should try this cocktail: <%= @cocktail.description %></p>
 
-    <h2>Here's what you need to do to make it: </h2>
-      <% @cocktail.doses.each do |amt| %>
-        <ul>
-          <li>
-            <%= amt.amount %> - <%= amt.method %> of <%= amt.ingredient.name %>
-            <%= link_to '', dose_path(amt), method: :delete, class: "fas fa-trash-alt" %>
-          </li>
-        </ul>
-      <% end %>
+        <h2>Here's what you need to do to make it: </h2>
+          <% @cocktail.doses.each do |amt| %>
+            <ul>
+              <li>
+                <%= amt.amount %> - <%= amt.method %> of <%= amt.ingredient.name %>
+                <%= link_to '', dose_path(amt), method: :delete, class: "fas fa-trash-alt" %>
+              </li>
+            </ul>
+          <% end %>
 
-    <h2> Now the Instructions: </h2>
-    <p> <%= @cocktail.instructions %> </p>
+        <h2> Now the Instructions: </h2>
+        <p> <%= @cocktail.instructions %> </p>
+      </div>
+      <div class="flex-item">
+          <%= cl_image_tag @cocktail.photo, class:"cocktail-image" %>
+      </div>
+    </div>
 
     <h2>You Tell Us: How did it taste?</h2>
 
