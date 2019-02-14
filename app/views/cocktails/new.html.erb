@@ -9,34 +9,40 @@
         <%= link_to "Back to Cocktail List", cocktails_path, class: "btn btn-primary"%>
       </li>
     </ul>
+    <div class="vertical-pic">
+      <div class="flex-item">
+        <%= simple_form_for(@cocktail) do |f| %>
+          <div class="form-group">
+            <%= f.input :name, class: 'form-control' %>
+          </div>
 
-    <%= simple_form_for(@cocktail) do |f| %>
-      <div class="form-group">
-        <%= f.input :name, class: 'form-control' %>
+          <div class="form-group">
+            <%= f.input :contributor, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.input :description, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.input :servings, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.input :instructions, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.input :photo %>
+            <%= f.input :photo_cache, as: :hidden %>
+            </div>
+
+          <%= f.submit class: 'btn btn-primary' %>
+        <% end %>
       </div>
-
-      <div class="form-group">
-        <%= f.input :contributor, class: 'form-control' %>
+      <div class="flex-item"></div>
+       <img class="d-block w-100" <%= cl_image_tag("https://res.cloudinary.com/diu66bbfw/image/upload/v1550148967/verticalgrapefruit.jpg") %> alt="Third slide">
       </div>
-
-      <div class="form-group">
-        <%= f.input :description, class: 'form-control' %>
-      </div>
-
-      <div class="form-group">
-        <%= f.input :servings, class: 'form-control' %>
-      </div>
-
-      <div class="form-group">
-        <%= f.input :instructions, class: 'form-control' %>
-      </div>
-
-      <div class="form-group">
-        <%= f.input :photo %>
-        <%= f.input :photo_cache, as: :hidden %>
-        </div>
-
-      <%= f.submit class: 'btn btn-primary' %>
-    <% end %>
+    </div>
   </div>
 </div>
